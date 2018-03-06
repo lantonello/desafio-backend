@@ -8,7 +8,7 @@ para consulta desses tickets, com recursos de ordenação, filtros e paginação
 
 A solução aqui apresentada está dividida em 2 sub-projetos:
 
-### Classifier:
+### 1. Classifier
 
 Responsável pela classificação da prioridade dos tickets, o sub-projeto *classifier* deve ser executado 
 através de Command Line Interface (prompt de comando ou terminal):
@@ -23,10 +23,10 @@ analisar o sentimento de uma frase ou sentença, indicando se ela tem caráter p
 
 *Como a Natural Language API é um serviço passível de cobrança, o arquivo de credenciais não está incluído no projeto.*
 
-### API
+### 2. API
 
 O primeiro acesso à API deverá ser a autenticação de um usuário fictício, para obtenção de um *token*, que 
-será utilizado nos acessos posteriores. O endpoint **(POST /api/public/auth)** espera os *username* e *password* 
+será utilizado nos acessos posteriores. O endpoint **(POST /api/public/auth)** espera os campos *username* e *password* 
 e retorna um JSON com a propriedade *api_token*.
 
 Para os demais acessos, a chave retornada acima deve ser inserida no *header* **Authorization** da requisição, 
@@ -39,9 +39,11 @@ Ex.: `order=DateCreate,asc`, `order=DateUpdate,desc`, `order=Priority`
 
 ###### filter
 Quando se desja filtrar pela data de criação, deve-se informar o nome do campo e um intervalo de datas. Ex.: `filter=DateCreate:2017-12-01,2017-12-31`.
+
 Caso o filtro desejado seja a prioridade, deve-se informar o nome do campo e a prioridade desejada. Ex.: `filter=Priority:Alta`.
 
-A paginação é feita de maneira automática, retornando 10 tickets por página. Para navegar entre as páginas disponíveis, deve-se informar 
+###### page
+Opcional. A paginação é feita de maneira automática, retornando 10 tickets por página. Para navegar entre as páginas disponíveis, deve-se informar 
 o número da página desejada no parâmetro *page*. Ex.: `page=2`
 
 
