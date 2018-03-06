@@ -1,0 +1,23 @@
+{
+    "name": "neoassist/api",
+    "description": "NeoAssist Ticket API",
+    "type": "project",
+    "require": {
+        "php": "^7.1",
+        "mikecao/flight": "dev-master",
+        "wixel/gump": "^1.5",
+        "nesbot/carbon": "^1.23"
+    },
+    "authors": [
+        {
+            "name": "Leandro Antonello",
+            "email": "lantonello@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload" : {
+        "psr-0": {
+            "" : "src/"
+        }
+    }
+}

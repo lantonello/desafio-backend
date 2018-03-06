@@ -1,0 +1,21 @@
+{
+    "name": "neoassist/classifier",
+    "description": "NeoAssist Natural Language classifier",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Leandro Antonello",
+            "email": "lantonello@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "~7.1",
+        "google/cloud": "dev-master"
+    },
+    "autoload" : {
+        "psr-4": {
+            "App\\" : "src"
+        }
+    }
+}
