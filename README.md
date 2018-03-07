@@ -34,16 +34,21 @@ utilizando o padrão *Bearer Token*.
 
 O endpoint **(GET /api/public/tickets)** aceita os seguintes parâmetros:
 ###### order
-Deve ser passado o nome do campo para ordenação e a direção, separados por uma vírgula. Os campos suportados são *DateCreate*, *DateUpdate* e *Priority*.
+Esse parâmetro recebe o nome da propriedade que se deseja ordenar e a direção da ordenação, separados por uma vírgula. 
+Os campos suportados são *DateCreate*, *DateUpdate* e *Priority*.
 Ex.: `order=DateCreate,asc`, `order=DateUpdate,desc`, `order=Priority`
 
 ###### filter
-Quando se desja filtrar pela data de criação, deve-se informar o nome do campo e um intervalo de datas. Ex.: `filter=DateCreate:2017-12-01,2017-12-31`.
+Quando se deseja filtrar os Tickets pela Data de Criação dos mesmos, deve-se informar o nome da propriedade (*DateCreate*, no caso) 
+seguido de dois pontos [:], a data de início do intervalo desejado, no formato `YYYY-MM-DD`, uma vírgula como separador e 
+a data de término do intervalo desejado, no formato `YYYY-MM-DD`. Ex.: `filter=DateCreate:2017-12-01,2017-12-31`.
 
-Caso o filtro desejado seja a prioridade, deve-se informar o nome do campo e a prioridade desejada. Ex.: `filter=Priority:Alta`.
+Para o caso onde se deseja filtrar os Tickets pela sua Prioridade, deve-se informar o nome da propriedade (*Priority*, no caso) 
+seguido de dois pontos [:] e a prioridade desejada. Os valores suportados são `Normal` e `Alta`.
+Ex.: `filter=Priority:Alta`.
 
 ###### page
-Opcional. A paginação é feita de maneira automática, retornando 10 tickets por página. Para navegar entre as páginas disponíveis, deve-se informar 
+Opcional. A paginação é feita de maneira automática, retornando 10 Tickets por página. Para navegar entre as páginas disponíveis, deve-se informar 
 o número da página desejada no parâmetro *page*. Ex.: `page=2`
 
 ### 3. Consumer
@@ -52,8 +57,8 @@ Trata-se de uma pequena aplicação web para demonstrar alguns dos recursos da A
 
 ## Como rodar
 
-A maneira mais simples para visualizar os projetos em funcionamento seria obter uma cópia desse repositório, 
-tanto via clone quanto via arquivo zip, colocando em uma pasta do servidor web. Ex.: `D:\apache\htdocs\neoassist`.
+A maneira mais simples de executar a solução seria obter uma cópia desse repositório, 
+tanto via clone quanto via pacote zip, colocando-o em uma pasta do servidor web. Ex.: `D:\apache\htdocs\neoassist`.
 (*Estou muito familiarizado com o desenvolvimento na plataforma Windows, motivo pelo qual esse exemplo usa um Path do Windows*)
 
 Supondo que o servidor Apache do exemplo acima esteja instalado e funcionando corretamente, 
