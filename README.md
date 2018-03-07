@@ -6,7 +6,7 @@ na íntegra no link (https://github.com/NeoAssist/desafio-backend).
 O desafio consiste em classificar os tickets com prioridade Alta ou Normal, assim como desenvolver uma API 
 para consulta desses tickets, com recursos de ordenação, filtros e paginação.
 
-A solução aqui apresentada está dividida em 2 sub-projetos:
+A solução aqui apresentada está dividida em 3 sub-projetos:
 
 ### 1. Classifier
 
@@ -46,4 +46,22 @@ Caso o filtro desejado seja a prioridade, deve-se informar o nome do campo e a p
 Opcional. A paginação é feita de maneira automática, retornando 10 tickets por página. Para navegar entre as páginas disponíveis, deve-se informar 
 o número da página desejada no parâmetro *page*. Ex.: `page=2`
 
+### 3. Consumer
+
+Trata-se de uma pequena aplicação web para demonstrar alguns dos recursos da API.
+
+## Como rodar
+
+A maneira mais simples para visualizar os projetos em funcionamento seria obter uma cópia desse repositório, 
+tanto via clone quanto via arquivo zip, colocando em uma pasta do servidor web. Ex.: `D:\apache\htdocs\neoassist`.
+(*Estou muito familiarizado com o desenvolvimento na plataforma Windows, motivo pelo qual esse exemplo usa um Path do Windows*)
+
+Supondo que o servidor Apache do exemplo acima esteja instalado e funcionando corretamente, 
+a URL de autenticação da API seria `http://localhost/neoassist/api/public/auth` e a URL de listagem de tickets 
+seria `http://localhost/neoassist/api/public/tickets`.
+
+Para verificar e testar todos os recursos que a API disponibiliza, pode-se utilizar uma ferramenta como o 
+[Postman](https://www.getpostman.com/).
+
+Ainda seguindo o exemplo, a URL da aplicação que consome a API seria `http://localhost/neoassist/consumer/public`.
 

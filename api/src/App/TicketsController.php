@@ -13,7 +13,11 @@ use Carbon\Carbon;
 class TicketsController extends Controller
 {
     // PROPERTIES =============================================================
+    /** @var string Holds the Tickets Json file. */
     private static $tickets_file = __DIR__ . '/../../../tickets.json';
+    
+    /** @var int Holds the last page for tickets pagination. */
+    protected static $paging;
 
     // PUBLIC STATIC METHODS ==================================================
     /**
@@ -48,7 +52,7 @@ class TicketsController extends Controller
         $list = self::paginate( $tickets );
         
         // Returns the Ticket list
-        \Flight::json([ 'success' => true, 'tickets' => $list ]);
+        \Flight::json([ 'success' => true, 'tickets' => $list, 'paging' => self::$paging ]);
     }
     
     /**
@@ -69,6 +73,8 @@ class TicketsController extends Controller
         // Fix wrong page values
         $page = max($page, 1);
         $page = min($page, $last);
+        
+        self::$paging = (object) [ 'page' => $page, 'last' => $last ];
         
         // Calculates the offset
         $offset = ($page - 1) * $psize;

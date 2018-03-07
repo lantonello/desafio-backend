@@ -1,0 +1,22 @@
+{
+    "name": "neoassist/api",
+    "description": "API to expose the Tickets",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Leandro Antonello",
+            "email": "lantonello@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "~7.1",
+        "mikecao/flight": "dev-master",
+        "aura/session": "3.x-dev"
+    },
+    "autoload" : {
+        "psr-0": {
+            "" : "src/"
+        }
+    }
+}
